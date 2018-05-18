@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
             buscar.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     cidade.setHint(cidade.getText().toString());
+                    ClimaHttp.setUrl("https://api.hgbrasil.com/weather/?format=json&city_name=".concat(cidade.getText().toString().concat("&key=4aaa9ac3")));
                     cidade.setText("");
-                    ClimaHttp.setUrl("https://api.hgbrasil.com/weather/?format=json&city_name="+cidade.getText().toString()+"&key=4aaa9ac3");
                     mListClima = (ListView) findViewById(R.id.listClima);
                     search();
                 }
